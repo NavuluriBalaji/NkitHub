@@ -1,0 +1,131 @@
+.dayos-footer {
+  background: #000;
+  color: #fff;
+  padding: 100px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: 'Inter', sans-serif;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .footer-main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    gap: 100px;
+  }
+
+  .footer-brand {
+    flex: 1;
+    
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      
+      .brand-name {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+    }
+
+    .brand-tagline {
+      font-size: 18px;
+      color: #777;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 24px;
+      
+      .social-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        opacity: 0.5;
+        transition: 0.3s;
+        &:hover { opacity: 1; }
+      }
+    }
+  }
+
+  .footer-nav-grid {
+    display: flex;
+    gap: 100px;
+    
+    .nav-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      
+      h4 {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #fff;
+        margin-bottom: 12px;
+      }
+
+      a {
+        color: #777;
+        text-decoration: none;
+        font-size: 15px;
+        transition: 0.3s;
+        &:hover { color: #fff; transform: translateX(5px); }
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #444;
+
+    .legal-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      
+      a {
+        color: #444;
+        text-decoration: none;
+        &:hover { color: #777; }
+      }
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      letter-spacing: 1px;
+      
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        background: #10B981; /* Green operational color */
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-main { flex-direction: column; gap: 60px; }
+  .footer-nav-grid { gap: 40px; justify-content: space-between; }
+}

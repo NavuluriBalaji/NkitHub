@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run start",
+  "outputDirectory": "dist/nkit-website/browser",
+  "framework": "angular",
+  "installCommand": "npm install"
+}

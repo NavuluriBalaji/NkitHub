@@ -1,0 +1,29 @@
+<nav class='dayos-nav' [class.nav-scrolled]='isScrolled'>
+  <div class='nav-container'>
+    <div class='nav-left'>
+      <a routerLink='/' class='nav-logo'>
+        <svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <path d='M16 0L31.5885 9V23L16 32L0.411545 23V9L16 0Z' fill='currentColor'/>
+        </svg>
+        <span class='logo-text'>NKIT</span>
+      </a>
+    </div>
+
+    <!-- The Floating Glass Pill (Matches Image Reference) -->
+    <div class='nav-center'>
+      <div class='nav-pill'>
+        <a routerLink='/features' class='nav-item'>Platform</a>
+        <a routerLink='/solutions' class='nav-item'>Solutions</a>
+        <a routerLink='/examples' class='nav-item'>Use Cases</a>
+        <a routerLink='/docs' class='nav-item'>Resources</a>
+        <a routerLink='/pricing' class='nav-item'>Plans</a>
+        <a routerLink='/community' class='nav-item'>Partnership</a>
+        <a routerLink='/blog' class='nav-item'>Company</a>
+      </div>
+    </div>
+
+    <div class='nav-right'>
+      <button class='dayos-btn primary'>Schedule a Demo</button>
+    </div>
+  </div>
+</nav>

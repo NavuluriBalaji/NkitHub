@@ -138,8 +138,8 @@ interface SidebarSection {
       color: #000;
       border-radius: 0 0 60px 60px;
       text-align: center;
-      .hero-main-title { font-size: 100px; font-weight: 900; line-height: 0.85; letter-spacing: -4px; margin-bottom: 40px; }
-      .hero-sub-description { font-size: 20px; color: #555; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+      .hero-main-title { font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; line-height: 0.85; letter-spacing: -4px; margin-bottom: 40px; }
+      .hero-sub-description { font-size: clamp(16px, 2.5vw, 20px); color: #555; max-width: 600px; margin: 0 auto; line-height: 1.5; }
     }
 
     .docs-split-container { padding: 100px 0; }
@@ -159,16 +159,16 @@ interface SidebarSection {
       }
     }
 
-    .docs-content { flex: 1; }
+    .docs-content { flex: 1; min-width: 0; } /* min-width: 0 prevents flex child from overflowing */
     .example-card-docs {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(40px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 80px;
-      border-radius: 40px;
+      padding: clamp(24px, 6vw, 80px);
+      border-radius: clamp(20px, 4vw, 40px);
     }
 
-    .content-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;
+    .content-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; gap: 20px;
       .breadcrumb { font-family: "JetBrains Mono"; font-size: 12px; color: #555; letter-spacing: 1.5px; }
       .action-buttons { display: flex; gap: 12px; align-items: center; }
       .copy-btn { background: #fff; color: #000; border: none; padding: 8px 15px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;
@@ -180,10 +180,10 @@ interface SidebarSection {
       }
     }
 
-    .doc-title { font-size: 4rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; }
-    .doc-desc { font-size: 20px; color: #888; line-height: 1.6; margin-bottom: 40px; }
+    .doc-title { font-size: clamp(2rem, 5vw, 4rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; }
+    .doc-desc { font-size: clamp(16px, 2.5vw, 20px); color: #888; line-height: 1.6; margin-bottom: 40px; }
 
-    .tag-row { display: flex; gap: 15px; margin-bottom: 50px;
+    .tag-row { display: flex; gap: 15px; margin-bottom: 50px; flex-wrap: wrap;
       .tag { font-family: "JetBrains Mono"; font-size: 11px; color: #fff; border: 1px solid #333; padding: 6px 15px; border-radius: 100px; }
     }
 
@@ -191,26 +191,26 @@ interface SidebarSection {
       background: #0d0e12;
       border: 1px solid #1a1c23;
       border-radius: 12px;
-      padding: 24px;
+      padding: clamp(16px, 4vw, 24px);
       margin-bottom: 24px;
-      .pip-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+      .pip-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 10px;
         span { font-family: "JetBrains Mono"; font-size: 11px; color: #444; font-weight: 700; letter-spacing: 1px; }
         .pip-copy-btn { background: rgba(255, 255, 255, 0.05); color: #888; border: 1px solid rgba(255, 255, 255, 0.1); padding: 4px 10px; border-radius: 4px; font-family: "JetBrains Mono"; font-size: 10px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;
           &:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
         }
       }
-      pre { margin: 0; }
-      code { font-family: "JetBrains Mono"; font-size: 14px; color: #00f2ff; }
+      pre { margin: 0; overflow-x: auto; }
+      code { font-family: "JetBrains Mono"; font-size: clamp(12px, 2vw, 14px); color: #00f2ff; }
     }
 
     .code-container {
       background: #000;
-      padding: 40px;
+      padding: clamp(20px, 4vw, 40px);
       border-radius: 20px;
       border: 1px solid #1a1a1a;
       margin-bottom: 50px;
       pre { margin: 0; white-space: pre-wrap; word-break: break-all; }
-      code { font-family: "JetBrains Mono"; font-size: 15px; line-height: 1.8; color: #aaa; }
+      code { font-family: "JetBrains Mono"; font-size: clamp(13px, 2vw, 15px); line-height: 1.8; color: #aaa; }
     }
 
     .output-section { border-top: 1px solid #111; padding-top: 40px;
@@ -222,13 +222,42 @@ interface SidebarSection {
       }
     }
 
-    .final-title { font-size: 100px; font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-bottom: 40px; }
+    .final-title { font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-bottom: 40px; }
     .dayos-btn.primary-alt { display: inline-block; background: #fff; color: #000; padding: 22px 50px; border-radius: 100px; font-weight: 700; border: none; cursor: pointer; text-decoration: none; transition: 0.2s;
       &:hover { opacity: 0.8; }
     }
 
     .reveal-on-scroll { opacity: 0; transform: translateY(50px); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
       &.reveal-active { opacity: 1; transform: translateY(0); }
+    }
+
+    /* PREMIUM MOBILE & TABLET MEDIA QUERIES */
+    @media (max-width: 960px) {
+      .section { padding: 80px 0; }
+      .docs-split-container { padding: 40px 0; }
+      .docs-layout { flex-direction: column; gap: 40px; }
+      .docs-sidebar { width: 100%; position: relative; top: 0;
+        .sidebar-section { margin-bottom: 24px; }
+        .sidebar-title { margin-bottom: 12px; }
+        .sidebar-links { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none;
+          &::-webkit-scrollbar { display: none; }
+          li { flex-shrink: 0; font-size: 14px; padding: 10px 20px !important; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 100px; margin: 0 !important;
+            &:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+            &.active { background: #fff; color: #000 !important; border-color: #fff; font-weight: 700; padding-left: 20px !important; }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .hero-light { border-radius: 0 0 30px 30px; }
+      .content-header { flex-direction: column; align-items: flex-start; gap: 15px;
+        .action-buttons { width: 100%; justify-content: space-between; }
+      }
+      .tag-row { gap: 10px; margin-bottom: 30px; }
+      .code-container, .example-card-docs { border-radius: 16px; }
+      .dayos-btn.primary-alt { width: 100%; padding: 18px 30px; }
     }
   `]
 })

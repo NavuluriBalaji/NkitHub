@@ -261,3 +261,16 @@
   .hero-title { font-size: 3.5rem; }
   .footer-cta h2 { font-size: 40px; letter-spacing: -1px; }
 }
+
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .hero-actions { flex-direction: column; width: 100%; gap: 15px; align-items: stretch; }
+  .btn, .command-box { width: 100%; text-align: center; }
+  .hero-section { padding: 120px 0 60px; }
+  .problem-section { margin: 10px; border-radius: 24px; padding: 60px 0; }
+  .problem-item { font-size: 1.5rem; }
+  .feature-card { padding: 40px 24px; border-radius: 24px; }
+  .bio-main { font-size: 32px; }
+  .floating-code { font-size: 14px; }
+  .footer-cta h2 { font-size: clamp(2rem, 8vw, 4rem); letter-spacing: -2px; }
+}

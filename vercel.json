@@ -4,4 +4,4 @@
   "outputDirectory": "dist/nkit-website/browser",
   "framework": "angular",
   "installCommand": "npm install"
-}
+} 
